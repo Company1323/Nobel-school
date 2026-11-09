@@ -57,54 +57,30 @@
     </header>
 
 
-<!-- Books Section -->
-<section class="section books-section" id="books">
+<section class="books-section" id="books">
+  <div class="books-title">
+    <svg class="books-wave" viewBox="0 0 150 24" aria-hidden="true">
+      <path d="M2 12 Q14 -2 26 12 T50 12 T74 12 T98 12 T122 12 T146 12"
+            fill="none" stroke="#0a84ff" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <h2>کتاب‌های درسی</h2>
+    <svg class="books-wave" viewBox="0 0 150 24" aria-hidden="true">
+      <path d="M2 12 Q14 -2 26 12 T50 12 T74 12 T98 12 T122 12 T146 12"
+            fill="none" stroke="#0a84ff" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </div>
 
-    <div class="section-heading">
-        <span>منابع آموزشی</span>
-        <h2>کتاب‌های درسی</h2>
-        <p>منابع آموزشی پایه‌های هفتم، هشتم و نهم</p>
-    </div>
+  <div class="grade-tabs" id="gradeTabs">
+    <button class="grade-tab active" data-grade="7">پایه هفتم</button>
+    <button class="grade-tab" data-grade="8">پایه هشتم</button>
+    <button class="grade-tab" data-grade="9">پایه نهم</button>
+  </div>
 
-    <div class="books-grid">
-
-        <div class="book-card">
-            <div class="book-cover">
-                <img src="book7.png" alt="کتاب‌های پایه هفتم">
-            </div>
-            <div class="book-content">
-                <span class="book-number">GRADE 07</span>
-                <h3>پایه هفتم</h3>
-                <p>کتاب‌ها و منابع آموزشی پایه هفتم</p>
-                <a href="books.html">مشاهده کتاب‌ها <span>←</span></a>
-            </div>
-        </div>
-
-        <div class="book-card">
-            <div class="book-cover">
-                <img src="book8.png" alt="کتاب‌های پایه هشتم">
-            </div>
-            <div class="book-content">
-                <span class="book-number">GRADE 08</span>
-                <h3>پایه هشتم</h3>
-                <p>کتاب‌ها و منابع آموزشی پایه هشتم</p>
-                <a href="books.html">مشاهده کتاب‌ها <span>←</span></a>
-            </div>
-        </div>
-
-        <div class="book-card">
-            <div class="book-cover">
-                <img src="book9.png" alt="کتاب‌های پایه نهم">
-            </div>
-            <div class="book-content">
-                <span class="book-number">GRADE 09</span>
-                <h3>پایه نهم</h3>
-                <p>کتاب‌ها و منابع آموزشی پایه نهم</p>
-                <a href="books.html">مشاهده کتاب‌ها <span>←</span></a>
-            </div>
-        </div>
-
-    </div>
+  <div class="books-carousel">
+    <button class="books-arrow books-arrow-right" id="booksRight" aria-label="کتاب‌های قبلی">›</button>
+    <div class="books-track" id="booksTrack"></div>
+    <button class="books-arrow books-arrow-left" id="booksLeft" aria-label="کتاب‌های بعدی">‹</button>
+  </div>
 </section>
 
 
@@ -145,15 +121,23 @@
 
 <!-- Students Section -->
 <section class="section students-section" id="students">
+<div class="students-slider">
 
-    <div class="section-heading">
-        <span>جامعه دانش‌آموزی</span>
-        <h2>دانش‌آموزان نوبل</h2>
-        <p>آشنایی با دانش‌آموزان مجموعه آموزشی نوبل</p>
+    <button class="student-arrow right" id="studentsPrev">
+        ❮ 
+    </button>
+
+    <div class="students-grid" id="studentsGrid">
+
+        <!-- تمام student-card های فعلی اینجا -->
+
     </div>
 
+    <button class="student-arrow left" id="studentsNext">
+        ❯
+    </button>
 
-<div class="students-grid" id="studentsGrid"></div>
+</div>
 
 </section>
 

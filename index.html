@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدرسه غیر انتفاعی نوبل - دور اول و دوم متوسطه تبریز</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="mobo-logo-5-296x150.png">
 </head>
 <body>
     <header>
@@ -19,9 +20,18 @@
             </div>
 
             <div class="social-links">
-                <a href="#" target="" aria-label="Instagram">
-                    ◎
-                </a>
+<a class="footer-instagram"
+   href="https://www.instagram.com/nobelschool.tab/"
+   target="_blank"
+   rel="noopener noreferrer">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1"/>
+    </svg>
+
+</a>
             </div>
 
         </div>
@@ -30,7 +40,6 @@
 
             <div class="logo">
                 <img src="lg.png" alt="LOGO">
-                <small>مدرسه غیرانتفاعی نوبل</small>
             </div>
 
             <div class="category">
@@ -38,23 +47,148 @@
                 <span class="menu-icon">☷</span>
             </div>
 
-            <div class="search-box">
-                <input type="text" placeholder="جستجو...">
-                <button>⌕</button>
-            </div>
+<div class="search-box">
+    <input
+        type="search"
+        id="siteSearch"
+        placeholder="نام استاد یا درس موردنظر..."
+        aria-label="جستجو در اساتید"
+    >
+
+    <button type="button" id="searchButton" aria-label="جستجو">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8"></circle>
+            <path d="m16 16 5 5"></path>
+        </svg>
+    </button>
+</div>
 
             <ul class="nav-links">
-                <li><a href="#">دانش‌آموزان</a></li>
+                <li><a href="#students">دانش‌آموزان</a></li>
                 <li><a href="#">قبولین دانشگاه</a></li>
                 <li><a href="#">نمونه سوالات</a></li>
                 <li><a href="#">هدایت تحصیلی</a></li>
-                <li><a href="#">اساتید</a></li>
+                <li><a href="#teachers">اساتید</a></li>
                 <li><a href="#">درباره ما</a></li>
             </ul>
 
         </nav>
 
     </header>
+
+    <!-- ================= HERO SECTION ================= -->
+
+<!-- HOME HERO SLIDER -->
+
+<section class="nobel-hero">
+
+    <div class="hero-slider">
+
+        <div class="hero-slide active">
+
+            <span class="hero-wave"></span>
+
+            <div class="hero-title">
+                <h1>
+                    دبیرستان غیرانتفاعی
+                    <span>نوبل</span>
+                </h1>
+
+                <div class="hero-english">
+                    NOBEL <span>SCHOOL</span>
+                </div>
+            </div>
+
+            <p class="hero-description">
+                آموزش یکی از ارزشمندترین سرمایه‌هایی است
+                که آینده انسان را می‌سازد.
+            </p>
+
+        </div>
+
+
+        <div class="hero-slide">
+
+            <span class="hero-wave"></span>
+
+            <div class="hero-title">
+                <h1>
+                    آینده‌ای روشن با
+                    <span>آموزشی متفاوت</span>
+                </h1>
+
+                <div class="hero-english">
+                    LEARN <span>AND GROW</span>
+                </div>
+            </div>
+
+            <p class="hero-description">
+                در مسیر یادگیری، کشف استعدادها و رسیدن به موفقیت
+                همراه شما هستیم.
+            </p>
+
+        </div>
+
+
+        <div class="hero-slide">
+
+            <span class="hero-wave"></span>
+
+            <div class="hero-title">
+                <h1>
+                    موفقیت از
+                    <span>نوبل</span> آغاز می‌شود
+                </h1>
+
+                <div class="hero-english">
+                    YOUR <span>FUTURE</span>
+                </div>
+            </div>
+
+            <p class="hero-description">
+                جایی برای پرورش استعدادها و ساختن آینده‌ای بهتر.
+            </p>
+
+        </div>
+
+
+        <button class="hero-arrow prev" id="heroPrev">‹</button>
+        <button class="hero-arrow next" id="heroNext">›</button>
+
+        <div class="hero-dots">
+            <button class="active" data-slide="0"></button>
+            <button data-slide="1"></button>
+            <button data-slide="2"></button>
+        </div>
+
+    </div>
+
+
+    <div class="hero-benefits">
+
+        <div class="benefit-item">
+            <span>♙</span>
+            <p>اساتید مجرب<br>و متخصص</p>
+        </div>
+
+        <div class="benefit-item">
+            <span>♧</span>
+            <p>آمادگی برای<br>موفقیت تحصیلی</p>
+        </div>
+
+        <div class="benefit-item">
+            <span>♧</span>
+            <p>محیط آموزشی<br>پویا و خلاق</p>
+        </div>
+
+        <div class="benefit-item">
+            <span>✧</span>
+            <p>پرورش استعدادها<br>و مهارت‌ها</p>
+        </div>
+
+    </div>
+
+</section>
 
 
 <section class="books-section" id="books">
@@ -85,6 +219,7 @@
 
 
 <!-- Teachers Section -->
+<!-- Teachers Section -->
 <section class="section teachers-section" id="teachers">
 
     <div class="section-heading">
@@ -93,29 +228,96 @@
         <p>آشنایی با اعضای مجموعه آموزشی نوبل</p>
     </div>
 
-    <div class="teachers-grid">
+    <div class="teacher-search-result" id="teacherSearchResult"
+         aria-live="polite"></div>
 
-        <div class="teacher-card">
-            <img src="teacher1.jpg" alt="معلم اول">
+    <div class="teachers-grid" id="teachersGrid">
+
+        <!-- Teacher 1 -->
+        <article class="teacher-card">
+
+            <div class="teacher-image">
+                <img src="ostad-sh.png" alt="استاد هادی قربانزاده">
+            </div>
 
             <div class="teacher-info">
-                <span>دبیر ریاضی</span>
-                <h3>نام معلم</h3>
-                <a href="#">مشاهده نمونه تدریس</a>
-            </div>
-        </div>
 
-        <div class="teacher-card">
-            <img src="teacher2.jpg" alt="معلم دوم">
+                <span class="teacher-subject">دبیر شیمی</span>
+
+                <h3>استاد هادی قربانزاده</h3>
+
+                <p class="teacher-description">
+                    متخصص شیمی کنکور و امتحانات نهایی
+                </p>
+
+                <div class="teacher-details">
+                    <div>
+                        <span class="detail-icon">◷</span>
+                        <span>۱۲ سال سابقه تدریس</span>
+                    </div>
+
+                    <div>
+                        <span class="detail-icon">◆</span>
+                        <span>مدرس مدارس برتر</span>
+                    </div>
+                </div>
+
+                <a href="#teachers" class="teacher-button">
+                    مشاهده نمونه تدریس
+                    <span>←</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- Teacher 2 -->
+        <article class="teacher-card">
+
+            <div class="teacher-image">
+                <img src="teacher2.jpg" alt="استاد علوم">
+            </div>
 
             <div class="teacher-info">
-                <span>دبیر علوم</span>
-                <h3>نام معلم</h3>
-                <a href="#">مشاهده نمونه تدریس</a>
+
+                <span class="teacher-subject">دبیر علوم</span>
+
+                <h3>استاد علیرضا مختاری </h3>
+
+                <p class="teacher-description">
+                    دبیر فیزیک
+                </p>
+
+                <div class="teacher-details">
+
+                    <div>
+                        <span class="detail-icon">◷</span>
+                        <span>سابقه تدریس</span>
+                    </div>
+
+                    <div>
+                        <span class="detail-icon">◆</span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+                <a href="#teachers" class="teacher-button">
+                    مشاهده نمونه تدریس
+                    <span>←</span>
+                </a>
+
             </div>
-        </div>
+
+        </article>
 
     </div>
+
+    <div class="no-teacher-result" id="noTeacherResult">
+        استادی با این مشخصات پیدا نشد!
+    </div>
+
 </section>
 
 
@@ -141,68 +343,186 @@
 
 </section>
 
-
 <!-- About Section -->
+
 <section class="about-section" id="about">
 
-    <div class="about-content">
-        <span>درباره مدرسه نوبل</span>
+    <div class="about-container">
 
-        <h2>
-            امروز یاد می‌گیریم،
-            <br>
-            فردا می‌سازیم.
-        </h2>
+        <div class="about-content">
 
-        <p>
-            مدرسه نوبل با هدف ایجاد محیطی پویا برای آموزش،
-            رشد استعدادها و پرورش نسل آینده فعالیت می‌کند.
-            ما به اهمیت یادگیری، خلاقیت و پیشرفت باور داریم.
-        </p>
+            <span class="about-label">درباره مدرسه نوبل</span>
 
-        <a href="about.html">بیشتر درباره ما ←</a>
+            <h2>
+                امروز یاد می‌گیریم،
+                <br>
+                <strong>فردا می‌سازیم.</strong>
+            </h2>
+
+            <p>
+                مدرسه نوبل با هدف ایجاد محیطی پویا برای آموزش،
+                رشد استعدادها و پرورش نسل آینده فعالیت می‌کند.
+                ما باور داریم هر دانش‌آموز استعداد ویژه‌ای دارد
+                که با آموزش صحیح می‌تواند شکوفا شود.
+            </p>
+
+            <a href="about.html" class="about-btn">
+                بیشتر درباره ما
+                <span>←</span>
+            </a>
+
+        </div>
+
+
+    <div class="school-video-container">
+
+        <div class="school-video-text">
+            <span>با مدرسه نوبل آشنا شوید</span>
+            <h2>آینده‌ای روشن با آموزش بهتر</h2>
+            <p>
+                در این ویدیو با فضای آموزشی و فعالیت‌های
+                مدرسه نوبل بیشتر آشنا شوید.
+            </p>
+        </div>
+
+        <div class="school-video">
+            <iframe
+                src="https://www.aparat.com/video/video/embed/videohash/v71s4ni/vt/frame"
+                allowFullScreen="true"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true">
+            </iframe>
+        </div>
+
     </div>
 
-    <div class="about-decoration">
-        NOBEL
     </div>
 
 </section>
 
 
 <!-- Footer -->
+<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
 
     <div class="footer-main">
 
+        <!-- Brand & Contact -->
         <div class="footer-brand">
-            <h2>NOBEL<span>.</span></h2>
-            <p>مدرسه غیرانتفاعی نوبل</p>
+
+            <div class="footer-logo">
+                <img src="header_logo-header-360x106-1.png" alt="لوگوی مدرسه نوبل">
+            </div>
+
+            <p class="footer-brand-title">
+                مدرسه غیرانتفاعی نوبل
+            </p>
+
             <p class="footer-description">
                 مسیری برای یادگیری، پیشرفت و ساختن آینده‌ای بهتر.
             </p>
+
+            <div class="footer-contact">
+
+                <h3>با ما تماس بگیرید</h3>
+
+                <a href="tel:04135555578">
+                    <span>☎</span>
+                    041-35555578
+                </a>
+
+                <a href="tel:04135551319">
+                    <span>☎</span>
+                    041-35551319
+                </a>
+
+                <a href="tel:04135551771">
+                    <span>☎</span>
+                    041-35551771
+                </a>
+
+                <a href="mailto:info@nobelschool.ir">
+                    <span>✉</span>
+                    info@nobelschool.ir
+                </a>
+
+            </div>
+
+            <a class="footer-instagram"
+            href="https://www.instagram.com/nobelschool.tab/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1"/>
+                </svg>
+
+                nobelschool.tab
+
+            </a>
+
         </div>
 
-        <div class="footer-links">
-            <h3>دسترسی سریع</h3>
-            <a href="#home">صفحه اصلی</a>
-            <a href="#books">کتاب‌های درسی</a>
-            <a href="#teachers">اساتید</a>
-            <a href="#students">دانش‌آموزان</a>
+
+        <!-- About -->
+        <div class="footer-column">
+
+            <h3>درباره نوبل</h3>
+
+            <a href="about.html">درباره ما</a>
+
+            <a href="#teachers">مدرسین</a>
+
+            <a href="cooperation.html">همکاری با ما</a>
+
         </div>
 
-        <div class="footer-contact">
-            <h3>ارتباط با ما</h3>
-            <p>تلفن: شماره مدرسه</p>
-            <p>ایمیل: ایمیل مدرسه</p>
-            <p>آدرس: آدرس مدرسه</p>
+
+        <!-- Links -->
+        <div class="footer-column">
+
+            <h3>لینک‌ها</h3>
+
+            <a href="news.html">اخبار و وبلاگ‌ها</a>
+
+            <a href="library.html">کتابخانه</a>
+
+            <a href="gallery.html">آلبوم عکس</a>
+
+            <a href="pro.html">برنامه درسی</a>
+
+        </div>
+
+
+        <!-- Support -->
+        <div class="footer-column">
+
+            <h3>پشتیبانی</h3>
+
+            <a href="faq.html">سؤالات متداول</a>
+
+            <a href="parents.html">انجمن اولیا و مربیان</a>
+
         </div>
 
     </div>
 
+
+    <!-- Footer Bottom -->
+
     <div class="footer-bottom">
-        <p>© تمامی حقوق برای مدرسه نوبل محفوظ است.</p>
-        <span>Designed for Nobel School</span>
+
+        <p>
+            © تمامی حقوق برای مدرسه غیرانتفاعی نوبل محفوظ است.
+        </p>
+
+        <span>
+            
+        </span>
+
     </div>
 
 </footer>

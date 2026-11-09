@@ -151,3 +151,46 @@ studentsPrev.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+const slides = document.querySelectorAll(".hero-slide");
+const dots = document.querySelectorAll(".hero-dots button");
+
+let currentSlide = 0;
+
+function showHeroSlide(index) {
+
+    slides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    dots.forEach(dot => {
+        dot.classList.remove("active");
+    });
+
+    currentSlide = (index + slides.length) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+}
+
+document.getElementById("heroNext").addEventListener("click", () => {
+    showHeroSlide(currentSlide + 1);
+});
+
+document.getElementById("heroPrev").addEventListener("click", () => {
+    showHeroSlide(currentSlide - 1);
+});
+
+dots.forEach(dot => {
+
+    dot.addEventListener("click", () => {
+
+        showHeroSlide(Number(dot.dataset.slide));
+
+    });
+
+});
+
+setInterval(() => {
+    showHeroSlide(currentSlide + 1);
+}, 10000);

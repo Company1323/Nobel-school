@@ -1,0 +1,648 @@
+           @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap'); 
+            
+            * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #013939, #087c70);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+       
+       .login-card {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 30px;
+            border-radius: 22px;
+            text-align: center;
+            box-shadow: 0 15px 40px #0003;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+            background: #013939;
+            color: white;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            font-size: 35px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        h1 {
+            color: #013939;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        label {
+            display: block;
+            text-align: right;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        input {
+                        font-family: 'Vazirmatn', sans-serif;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            outline: none;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input:focus {
+            border-color: #087c70;
+        }
+
+        button {
+                        font-family: 'Vazirmatn', sans-serif;
+            width: 100%;
+            padding: 15px;
+            background: #013939;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #087c70;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
+            color: #013939;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        
+/* ===== Portal Dashboard ===== */
+
+.portal-page {
+    margin: 0;
+    min-height: 100vh;
+    background: #f3f6f5;
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    color: #243333;
+}
+
+.portal-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: #013939;
+    color: white;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand {
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #ffffff25;
+}
+
+.sidebar-brand h2 {
+    font-size: 27px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.sidebar-brand span {
+    display: block;
+    font-size: 12px;
+    color: #b7d4ce;
+    margin-top: 5px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.menu-item {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: #d5e5e1;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: right;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.menu-item span {
+    margin-left: 10px;
+    font-size: 17px;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background: #087c70;
+    color: white;
+}
+
+.menu-item.logout {
+    margin-top: 25px;
+    color: #ffcaca;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    color: #d5e5e1;
+}
+
+.sidebar-footer small {
+    display: block;
+    margin-top: 7px;
+    color: #9bbdb5;
+}
+
+/* Main */
+
+.portal-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.portal-header {
+    background: white;
+    padding: 22px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e6ece9;
+}
+
+.portal-header h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.portal-header p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #81918c;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.user-avatar {
+    background: #e5f3ef;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Content */
+
+.portal-content {
+    flex: 1;
+    padding: 35px;
+}
+
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+.welcome-box {
+    background: linear-gradient(120deg, #013939, #087c70);
+    color: white;
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+}
+
+.welcome-box h2 {
+    margin: 0 0 12px;
+    font-size: 24px;
+}
+
+.welcome-box p {
+    margin: 0;
+    color: #d7ebe6;
+    font-size: 14px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.dashboard-card,
+.content-card {
+    background: white;
+    border-radius: 17px;
+    padding: 25px;
+    box-shadow: 0 5px 20px #123b3510;
+}
+
+.dashboard-card {
+    cursor: pointer;
+    transition: .25s;
+    border: 1px solid #edf1ef;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #123b3520;
+}
+
+.card-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card h3 {
+    font-size: 17px;
+    margin: 0 0 10px;
+}
+
+.dashboard-card p,
+.content-card p {
+    color: #7c8b86;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.dashboard-card span {
+    display: block;
+    margin-top: 20px;
+    color: #087c70;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.page-heading h2 {
+    margin: 0 0 8px;
+}
+
+.page-heading p {
+    color: #81918c;
+    font-size: 13px;
+}
+
+.schedule-card img {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: auto;
+    border-radius: 12px;
+}
+
+.portal-footer {
+    padding: 20px;
+    text-align: center;
+    color: #899792;
+    font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+    .portal-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: auto;
+        min-width: 0;
+        padding: 18px;
+    }
+
+    .sidebar-brand {
+        padding-bottom: 15px;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        gap: 7px;
+    }
+
+    .menu-item {
+        width: auto;
+        flex: 1 1 140px;
+        text-align: center;
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+
+    .menu-item.logout {
+        margin-top: 0;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .portal-header {
+        padding: 18px;
+    }
+
+    .portal-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-box {
+        padding: 25px;
+    }
+
+    .welcome-box h2 {
+        font-size: 19px;
+    }
+}
+
+
+/* Fixed Portal Layout */
+
+.portal-page {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.portal-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    direction: rtl;
+}
+
+.sidebar {
+    flex: 0 0 250px;
+    width: 250px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.portal-main {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.portal-header {
+    width: 100%;
+    min-height: 85px;
+    box-sizing: border-box;
+}
+
+.portal-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.portal-footer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    .portal-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        flex: none;
+    }
+
+    .portal-main {
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+
+/* Class Chat */
+
+.chat-container {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #123b3510;
+}
+
+.chat-header {
+    padding: 20px 25px;
+    background: #013939;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-header h3 {
+    margin: 0 0 5px;
+}
+
+.chat-header span {
+    font-size: 12px;
+    color: #c4ddd7;
+}
+
+.chat-status {
+    color: #9df2c2 !important;
+}
+
+.messages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message-item {
+    background: #f0f6f4;
+    padding: 12px 16px;
+    border-radius: 12px;
+    max-width: 75%;
+    align-self: flex-start;
+    overflow-wrap: anywhere;
+}
+
+.message-item strong {
+    color: #087c70;
+    font-size: 13px;
+}
+
+.message-item p {
+    margin: 8px 0;
+    line-height: 1.8;
+}
+
+.message-item small {
+    color: #87958f;
+    font-size: 10px;
+}
+
+.chat-placeholder {
+    color: #87958f;
+    text-align: center;
+    margin: auto;
+}
+
+.chat-form {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-top: 1px solid #edf1ef;
+}
+
+.chat-form input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #dce6e1;
+    border-radius: 10px;
+    padding: 13px;
+    font-family: inherit;
+    outline: none;
+}
+
+.chat-form input:focus {
+    border-color: #087c70;
+}
+
+.chat-form button {
+    border: none;
+    background: #087c70;
+    color: white;
+    padding: 0 25px;
+    border-radius: 10px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+@media (max-width: 550px) {
+    .messages {
+        height: 350px;
+    }
+
+    .message-item {
+        max-width: 90%;
+    }
+}
+
+
+/* Chat Input Improvement */
+
+.chat-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+}
+
+.chat-form input {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    height: 56px;
+    box-sizing: border-box;
+    padding: 12px 18px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 1px solid #dce6e1;
+    border-radius: 12px;
+}
+
+.chat-form button {
+    flex: 0 0 100px;
+    height: 56px;
+    font-family: inherit;
+    font-size: 15px;
+    border-radius: 12px;
+}
+
+@media (max-width: 550px) {
+    .chat-form {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .chat-form button {
+        flex-basis: 75px;
+    }
+}
+

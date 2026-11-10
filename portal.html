@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پورتال دانش‌آموزی | Nobel School</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="portal-page">
+
+<div class="portal-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>NOBEL</h2>
+            <span>پنل دانش‌آموزی</span>
+        </div>
+
+        <nav class="sidebar-menu">
+            <button class="menu-item active" data-view="dashboard">
+                <span>▦</span> داشبورد
+            </button>
+
+            <button class="menu-item" data-view="chat">
+                <span>▤</span> گفت‌وگوی بین‌کلاسی
+            </button>
+
+            <button class="menu-item" data-view="schedule">
+                <span>▦</span> برنامه هفتگی
+            </button>
+
+            <button class="menu-item logout" id="logoutBtn">
+                <span>↪</span> خروج از حساب
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            Nobel School
+            <small>پنل اختصاصی دانش‌آموزان</small>
+        </div>
+    </aside>
+
+    <div class="portal-main">
+
+        <header class="portal-header">
+            <div>
+                <h3>پورتال دانش‌آموزی</h3>
+                <p>به سامانه مدرسه نوبل خوش آمدید</p>
+            </div>
+
+            <div class="user-info">
+                <span class="user-avatar">👤</span>
+                <span id="studentName">دانش‌آموز</span>
+            </div>
+        </header>
+
+        <main class="portal-content">
+
+            <!-- داشبورد -->
+            <section class="view active" id="dashboard">
+
+                <div class="welcome-box">
+                    <h2>خوش آمدی، <span id="welcomeName"></span></h2>
+                    <p>از این قسمت می‌توانی به امکانات پورتال دانش‌آموزی دسترسی داشته باشی.</p>
+                </div>
+
+                <h3 class="section-title">دسترسی سریع</h3>
+
+                <div class="dashboard-grid">
+
+                    <div class="dashboard-card" data-open="chat">
+                        <div class="card-icon">💬</div>
+                        <h3>گفت‌وگوی بین‌کلاسی</h3>
+                        <p>بخش ارتباط و گفت‌وگوی دانش‌آموزان</p>
+                        <span>ورود به بخش ←</span>
+                    </div>
+
+                    <div class="dashboard-card" data-open="schedule">
+                        <div class="card-icon">📅</div>
+                        <h3>برنامه هفتگی</h3>
+                        <p>مشاهده برنامه هفتگی کلاس</p>
+                        <span>مشاهده برنامه ←</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- گفت‌وگو -->
+
+<section class="view" id="chat">
+
+    <div class="page-heading">
+        <h2>گفت‌وگوی کلاسی</h2>
+        <p>محیط گفت‌وگوی اختصاصی کلاس شما</p>
+    </div>
+
+    <div class="chat-container">
+
+        <div class="chat-header">
+            <div>
+                <h3 id="chatClassName">گفت‌وگوی کلاس</h3>
+                <span>گروه اختصاصی دانش‌آموزان</span>
+            </div>
+            <span class="chat-status">● آنلاین</span>
+        </div>
+
+        <div id="messages" class="messages">
+            <p class="chat-placeholder">در حال اتصال به گفت‌وگو...</p>
+        </div>
+
+        <form id="chatForm" class="chat-form">
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="پیام خود را بنویسید..."
+                maxlength="1000"
+                autocomplete="off"
+                required
+            >
+            <button type="submit">ارسال</button>
+        </form>
+
+    </div>
+</section>
+
+
+            <!-- برنامه هفتگی -->
+            <section class="view" id="schedule">
+                <div class="page-heading">
+                    <h2>برنامه هفتگی</h2>
+                    <p>برنامه درسی کلاس خود را مشاهده کن.</p>
+                </div>
+
+                <div class="content-card schedule-card">
+                    <img src="9-1.jpg"
+                         alt="برنامه هفتگی کلاس">
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="portal-footer">
+            © تمامی حقوق متعلق به مدرسه نوبل است.
+        </footer>
+
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    // بررسی ورود دانش‌آموز
+    const studentName = sessionStorage.getItem("studentName");
+
+    if (!studentName) {
+        window.location.href = "login.html";
+    } else {
+        document.getElementById("studentName").textContent = studentName;
+        document.getElementById("welcomeName").textContent = studentName;
+    }
+
+    // تغییر بخش‌های داشبورد
+    const menuItems = document.querySelectorAll("[data-view]");
+    const views = document.querySelectorAll(".view");
+
+    function showView(viewName) {
+        views.forEach(view => {
+            view.classList.toggle("active", view.id === viewName);
+        });
+
+        menuItems.forEach(item => {
+            item.classList.toggle(
+                "active",
+                item.dataset.view === viewName
+            );
+        });
+    }
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", () => {
+            showView(item.dataset.view);
+        });
+    });
+
+    // دسترسی سریع از کارت‌های داشبورد
+    document.querySelectorAll("[data-open]").forEach(card => {
+        card.addEventListener("click", () => {
+            showView(card.dataset.open);
+        });
+    });
+
+    // خروج
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+    await fetch("/api/logout", {
+        method: "POST"
+    });
+
+    sessionStorage.clear();
+    window.location.href = "login.html";
+});
+
+
+const socket = io();
+
+const messagesBox = document.getElementById("messages");
+const chatForm = document.getElementById("chatForm");
+const messageInput = document.getElementById("messageInput");
+
+document.getElementById("chatClassName").textContent =
+    "گفت‌وگوی " + (sessionStorage.getItem("studentClass") || "کلاس");
+
+function addMessage(message) {
+    const item = document.createElement("div");
+    item.className = "message-item";
+
+    const name = document.createElement("strong");
+    name.textContent = message.name;
+
+    const text = document.createElement("p");
+    text.textContent = message.message;
+
+    const time = document.createElement("small");
+    time.textContent = new Date(
+        message.created_at.replace(" ", "T") + "Z"
+    ).toLocaleTimeString("fa-IR", {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+    item.append(name, text, time);
+    messagesBox.appendChild(item);
+
+    messagesBox.scrollTop = messagesBox.scrollHeight;
+}
+
+socket.on("connect", () => {
+    messagesBox.innerHTML = "";
+});
+
+socket.on("chat-history", (messages) => {
+    messagesBox.innerHTML = "";
+
+    messages.forEach(addMessage);
+});
+
+socket.on("new-message", (message) => {
+    addMessage(message);
+});
+
+socket.on("connect_error", () => {
+    messagesBox.innerHTML = "اتصال به چت برقرار نشد. دوباره وارد حساب شو.";
+});
+
+chatForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const message = messageInput.value.trim();
+
+    if (!message || !socket.connected) return;
+
+    socket.emit("send-message", message);
+
+    messageInput.value = "";
+    messageInput.focus();
+});
+
+</script>
+
+</body>
+</html>

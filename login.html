@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود دانش‌آموزان | Nobel School</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-card">
+
+        <div class="logo">N</div>
+
+        <h1>ورود دانش‌آموزان</h1>
+
+        <p>به سامانه دانش‌آموزی مدرسه نوبل خوش آمدید.</p>
+
+        <form id="loginForm">
+
+            <label for="nationalCode">کد دانش‌آموزی</label>
+
+            <input
+                type="text"
+                id="nationalCode"
+                placeholder="کد آزمایشی ۱۰ رقمی"
+                maxlength="10"
+                inputmode="numeric"
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">ورود به پنل</button>
+
+            <div id="message"></div>
+
+        </form>
+
+        <a href="index.html" class="back">بازگشت به صفحه اصلی</a>
+
+    </div>
+
+    <script>
+        const loginForm = document.querySelector("#loginForm");
+
+        loginForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const studentCode = document.querySelector("#nationalCode").value.trim();
+            const message = document.querySelector("#message");
+
+            message.textContent = "";
+
+            try {
+                const response = await fetch("/api/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ studentCode })
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    message.textContent = result.error;
+                    return;
+                }
+
+                sessionStorage.setItem("studentId", result.id);
+                sessionStorage.setItem("studentName", result.name);
+                sessionStorage.setItem("studentClass", result.className);
+
+                window.location.href = "portal.html";
+
+            } catch (error) {
+                message.textContent = "ارتباط با سرور برقرار نشد.";
+                console.error(error);
+            }
+        });
+    </script>
+
+</body>
+</html>

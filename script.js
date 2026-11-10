@@ -194,3 +194,44 @@ dots.forEach(dot => {
 setInterval(() => {
     showHeroSlide(currentSlide + 1);
 }, 10000);
+
+
+
+//----------*//
+
+const students = {
+    "1365930130": "علی رضایی",
+    "2222222222": "محمد احمدی",
+    "3333333333": "امیر حسینی"
+};
+
+const loginForm = document.getElementById("loginForm");
+const nationalCode = document.getElementById("nationalCode");
+const message = document.getElementById("message");
+
+loginForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const code = nationalCode.value.trim();
+
+    if (!/^\d{10}$/.test(code)) {
+        message.style.color = "red";
+        message.textContent = "کد ملی باید ۱۰ رقم باشد.";
+        return;
+    }
+
+    if (students[code]) {
+        localStorage.setItem("studentName", students[code]);
+
+        message.style.color = "green";
+        message.textContent = "ورود موفقیت‌آمیز بود!";
+
+        setTimeout(function() {
+            window.location.href = "portal.html";
+        }, 700);
+
+    } else {
+        message.style.color = "red";
+        message.textContent = "دانش‌آموزی با این کد ملی پیدا نشد.";
+    }
+});
